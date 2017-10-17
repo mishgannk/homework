@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+#label{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: #4516c5;
+    color: white;  
+    font-size: 2rem;
+    padding: 1.4rem;
+    z-index: 1;
+}
+#main{
+    width: 80vw;
+    margin: 7rem auto;
+    display: flex;
+}
+#date{
+    align-self: flex-start;
+    font-size: 1rem;
+    box-sizing: border-box; 
+    padding: .5rem;
+    border-radius: .3rem;
+    background-color: #ddd;
+    
+}
+#content{
+    display: flex;
+    flex-direction: column;
+    margin-left: .7rem;
+}
+#caption{
+    font-size: 2.7rem;
+    font-weight: bold;
+}
+#text{
+    margin-top: 1rem;
+}
