@@ -1,46 +1,44 @@
 function makeNote(note_obj) {
-    let note = document.createElement('div');
-    note.classList.add('note');
-    note.classList.add(note_obj.color);
+  let note = document.createElement('div');
+  note.classList.add('note');
+  note.classList.add(note_obj.color);
 
-    if(note_obj.image){
-        let note_cont_img = document.createElement('div')
-        note_cont_img.classList.add('cont_img')
+  if(note_obj.image){
+    let note_container_image = document.createElement('div')
+    note_container_image.classList.add('note-container-image')
 
+    let note_image = document.createElement('img')
+    note_image.classList.add('note-image')
+    note_image.src = note_obj.image
+    note_container_image.appendChild(note_image)
+    note.appendChild(note_container_image)
+  }
 
-        let note_img = document.createElement('img')
-        note_img.classList.add('img')
-        note_img.src = note_obj.image
+  let note_contents = document.createElement('div')
+  note_contents.classList.add('note-contents')
 
-        note_cont_img.appendChild(note_img)
-        note.appendChild(note_cont_img)
-    }
+  let header = document.createElement('div')
+  header.classList.add('header')
+  header.textContent = note_obj.title
 
-    let note_contents = document.createElement('div')
-    note_contents.classList.add('note-contents')
+  let actions = document.createElement('div')
+  actions.classList.add('actions')
+  actions.textContent = 'Actions'
 
-    let header = document.createElement('div')
-    header.classList.add('header')
-    header.textContent = note_obj.title
+  let content = document.createElement('div')
+  content.classList.add('content')
+  content.textContent = note_obj.content
 
-    let actions = document.createElement('div')
-    actions.classList.add('actions')
-    actions.textContent = 'Actions'
+  note_contents.appendChild(header)
+  note_contents.appendChild(content)
 
-    let content = document.createElement('div')
-    content.classList.add('content')
-    content.textContent = note_obj.content
+  note.appendChild(note_contents)
+  note.appendChild(actions)
 
-    note_contents.appendChild(header)
-    note_contents.appendChild(content)
-
-    note.appendChild(note_contents)
-    note.appendChild(actions)
-    
-    return note;
+  return note;
 }
 
-let main_note_container = document.querySelector('.main-note-container');
+let main_note_container = document.querySelector('.priority-note-container');
 let normal_note_container = document.querySelector('.normal-note-container');
 for (let note of data) {
     let n = makeNote(note)
