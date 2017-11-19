@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(232, 232, 232);
+}
+
+.menu {
+    width: 100vw;
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgb(0,44,117);
+    z-index: 1;
+}
+
+
+.button-add-note {
+    margin-left: 10%;
+}
+
+.group {
+    margin-bottom: 0;
+    width: 80vw;
+    margin: auto;
+}
+.group:first-of-type {
+    margin-top: 6rem;
+}
+
+.priority-note-container,
+.normal-note-container {
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.note {
+    border-radius: 1px;
+    width: 16rem;
+    min-height: 16rem;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .23);
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    position: relative;
+}
+.note:first-child {
+    margin-left: 0;
+}
+
+.note-contents {
+    padding: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.actions {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-weight: bold;
+    visibility: hidden;
+}
+
+.note-button-delete{
+
+}
+.note-button-edit{
+    height: 20px;
+}
+
+.note:hover .actions {
+    visibility: visible;
+}
+
+.note-container-image {
+    width: 100%;
+    max-height: 9rem;
+    overflow: hidden;
+}
+
+.note-image {
+    width: 100%;
+}
+
+.header {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.content {
+    margin-top: .4rem;
+}
+
+.blue {
+    background-color: rgb(25,188,187);
+}
+
+.orange {
+    background-color: rgb(251,155,105);
+}
+
+.red {
+    background-color: rgb(193, 235, 161);
+}
+
+.yellow {
+    background-color: rgb(255, 255, 157);
+}
+
+@media (max-width: 48em) {
+    .note {
+        width: 100%;
+        min-height: 10rem;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .note:last-child {
+        margin-bottom: 0;
+    }
+}
